@@ -67,4 +67,30 @@ export const films = [
       { label: 'View on GitHub', href: 'https://github.com/PhilipDodson2017/ai-tools', primary: true },
     ],
   },
+  {
+    id: 'alt-frontends',
+    kind: 'project',
+    title: 'Alternative Frontends: Google',
+    short: 'Alt Google',
+    poster: '/posters/alternative-frontends.png',
+    posterAlt:
+      'A minimal black Google start page: shortcut tiles along the top, a search box reading "how to center a div", and Google, Gemini and All search modes.',
+    blurb:
+      'A distraction-free Google start page. Search goes straight to plain web results with no AI overview, and your shortcut tiles live in the browser. It is one static HTML file with no build step, no dependencies and no tracking.',
+    features: [
+      'Plain web results by default (udm=14)',
+      'Gemini, All and YouTube search modes',
+      'Editable shortcut tiles, saved locally',
+      'Light/dark themes, import/export links',
+    ],
+    tags: ['HTML', 'CSS', 'JavaScript', 'No build step', 'Live'],
+    links: [
+      {
+        label: 'Try it',
+        href: 'https://philipdodson.dev/alternative-frontends/google/',
+        primary: true,
+      },
+      { label: 'View on GitHub', href: 'https://github.com/PhilipDodson2017/alternative-frontends' },
+    ],
+  },
 ]

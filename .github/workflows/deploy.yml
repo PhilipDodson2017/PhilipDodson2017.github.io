@@ -1,0 +1,62 @@
+# Build the Vite site and publish it to GitHub Pages (philipdodson.dev).
+#
+# - Pull requests into master: lint + build only (a CI check; nothing goes live).
+# - Pushes to master (i.e. a merged PR): lint + build, then deploy to Pages.
+# - Can also be run by hand from the Actions tab (workflow_dispatch).
+name: Build and deploy
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+  workflow_dispatch:
+
+# Least privilege: read the repo; deploy needs pages + an OIDC token.
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# One deployment at a time; don't cancel a deploy that's already running.
+concurrency:
+  group: pages-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22 # Vite 8 needs Node ^20.19 or >=22.12
+          cache: npm
+
+      - name: Install exact dependencies from package-lock.json
+        run: npm ci
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Build
+        run: npm run build
+
+      - name: Upload the built site
+        if: github.event_name != 'pull_request'
+        uses: actions/upload-pages-artifact@v5
+        with:
+          path: dist
+
+  deploy:
+    if: github.event_name != 'pull_request'
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v5

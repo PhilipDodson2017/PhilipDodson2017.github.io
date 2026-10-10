@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@500;600&family=Limelight&display=swap" rel="stylesheet" />
+<style>
+  * { box-sizing: border-box; }
+  html, body { margin: 0; }
+  body {
+    width: 1200px; height: 630px; overflow: hidden; position: relative;
+    background: radial-gradient(ellipse 70% 75% at 50% 45%, #241a26, #0b0a10 72%);
+    color: #f6ecd8; font-family: 'IBM Plex Sans', sans-serif;
+  }
+  .valance {
+    position: absolute; top: 0; left: 0; right: 0; height: 40px; z-index: 3;
+    background: linear-gradient(rgba(0,0,0,.35), transparent),
+      repeating-linear-gradient(90deg, #3d050c 0, #7d0f1d 10px, #a41d2c 16px, #7d0f1d 22px, #3d050c 32px);
+    -webkit-mask: linear-gradient(#000 0 0) top / 100% 22px no-repeat,
+      radial-gradient(circle at 50% 0, #000 19px, transparent 20px) 0 0 / 40px 40px repeat-x;
+  }
+  .curtain {
+    position: absolute; top: 0; bottom: 0; width: 92px; z-index: 2;
+    background: linear-gradient(90deg, rgba(0,0,0,.5), transparent 25%, transparent 75%, rgba(0,0,0,.5)),
+      repeating-linear-gradient(90deg, #3d050c 0, #7d0f1d 14px, #a41d2c 22px, #7d0f1d 30px, #3d050c 44px);
+  }
+  .curtain.l { left: 0; box-shadow: 14px 0 30px rgba(0,0,0,.6); }
+  .curtain.r { right: 0; box-shadow: -14px 0 30px rgba(0,0,0,.6); }
+
+  .wrap {
+    position: absolute; inset: 70px 130px 46px; z-index: 1;
+    display: grid; grid-template-columns: 1fr 400px; gap: 40px; align-items: center;
+  }
+
+  .eyebrow {
+    margin: 0; font-family: 'IBM Plex Mono', monospace; font-size: 20px;
+    letter-spacing: .34em; text-transform: uppercase; color: #f0b85a;
+  }
+  .name {
+    margin: 14px 0 10px; font-family: 'Limelight', serif; font-weight: 400;
+    font-size: 76px; line-height: 1; color: #f6ecd8;
+    text-shadow: 0 0 26px rgba(240,184,90,.45);
+  }
+  .role {
+    margin: 0; font-size: 19px; font-weight: 600; letter-spacing: .14em; white-space: nowrap;
+    text-transform: uppercase; color: #d9c18f;
+  }
+  .rule { width: 120px; height: 3px; margin: 30px 0 26px; background: #f0b85a; border-radius: 2px; }
+  .bill { margin: 0; max-width: 470px; font-size: 24px; line-height: 1.5; color: #cfc6d6; text-wrap: balance; }
+  .bill b { color: #f6ecd8; font-weight: 600; }
+  .url {
+    margin: 30px 0 0; font-family: 'IBM Plex Mono', monospace; font-size: 20px; color: #f0b85a;
+  }
+
+  .screens { display: grid; gap: 26px; width: 400px; }
+  .screen {
+    position: relative; aspect-ratio: 16 / 9; border-radius: 4px; overflow: hidden;
+    box-shadow: 0 0 0 6px #050407, 0 0 0 8px rgba(240,184,90,.55), 0 0 60px 6px rgba(255,236,205,.16);
+  }
+  .screen img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .screen span {
+    position: absolute; left: 0; right: 0; bottom: 0; padding: 26px 14px 8px;
+    background: linear-gradient(transparent, rgba(0,0,0,.85));
+    font-family: 'IBM Plex Mono', monospace; font-size: 17px; color: #f6ecd8;
+  }
+  .screen:nth-child(1) { transform: rotate(-1.4deg); }
+  .screen:nth-child(2) { transform: rotate(1.2deg) translateX(-14px); }
+</style>
+</head>
+<body>
+  <div class="valance"></div>
+  <div class="curtain l"></div>
+  <div class="curtain r"></div>
+  <div class="wrap">
+    <div>
+      <p class="eyebrow">Now showing</p>
+      <h1 class="name">Philip Dodson</h1>
+      <p class="role">Senior Backend Python Engineer</p>
+      <div class="rule"></div>
+      <p class="bill">Featuring <b>Square Timer</b> and <b>Story&nbsp;Matrix</b>, an AI skill for interview prep.</p>
+      <p class="url">philipdodson2017.github.io</p>
+    </div>
+    <div class="screens">
+      <div class="screen"><img src="../public/posters/squaretimer.png" alt="" /><span>Square Timer</span></div>
+      <div class="screen"><img src="../public/posters/story-matrix.png" alt="" /><span>Story Matrix</span></div>
+    </div>
+  </div>
+</body>
+</html>

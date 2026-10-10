@@ -76,12 +76,12 @@ export const films = [
     posterAlt:
       'A minimal black Google start page: shortcut tiles along the top, a search box reading "how to center a div", and Google, Gemini and All search modes.',
     blurb:
-      'A distraction-free Google start page. Search goes straight to plain web results with no AI overview, and your shortcut tiles live in the browser. It is one static HTML file with no build step, no dependencies and no tracking.',
+      "A Google start page that makes how you search an active choice. Pick the mode before you hit Enter, not after: plain web results, Google's full results with AI overview, Gemini, or YouTube. One static HTML file, no tracking.",
     features: [
-      'Plain web results by default (udm=14)',
-      'Gemini, All and YouTube search modes',
-      'Editable shortcut tiles, saved locally',
-      'Light/dark themes, import/export links',
+      'Choose the search mode before you search',
+      'Plain web, All, Gemini or YouTube',
+      'Switch with a click or ←/→; it remembers',
+      'Editable tiles, themes, import/export',
     ],
     tags: ['HTML', 'CSS', 'JavaScript', 'No build step', 'Live'],
     links: [

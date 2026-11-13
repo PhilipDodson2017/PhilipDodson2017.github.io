@@ -1,0 +1,7 @@
+name = "philip-chat"
+main = "chat.js"
+compatibility_date = "2026-01-01"
+
+# The key is a secret, not a var: npx wrangler secret put OPENROUTER_API_KEY
+[vars]
+OPENROUTER_MODEL = "deepseek/deepseek-v4.1-flash-1017"

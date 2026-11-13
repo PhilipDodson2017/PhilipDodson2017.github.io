@@ -4,6 +4,7 @@ import Marquee from './components/Marquee.jsx'
 import Theater from './components/Theater.jsx'
 import TicketStub from './components/TicketStub.jsx'
 import FilmReel from './components/FilmReel.jsx'
+import ChatWidget from './components/ChatWidget/ChatWidget.jsx'
 
 // Computed once when the module loads, not on every render (keeps render "pure").
 const YEAR = new Date().getFullYear()
@@ -45,6 +46,7 @@ export default function App() {
           <a href={person.links.linkedin} target="_blank" rel="noreferrer">LinkedIn</a>
         </p>
       </footer>
+      <ChatWidget />
     </div>
   )
 }

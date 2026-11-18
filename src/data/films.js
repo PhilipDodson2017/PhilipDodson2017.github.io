@@ -93,4 +93,29 @@ export const films = [
       { label: 'View on GitHub', href: 'https://github.com/PhilipDodson2017/alternative-frontends' },
     ],
   },
+  {
+    id: 'seafarer',
+    kind: 'project',
+    title: 'Seafarer',
+    short: 'Seafarer',
+    poster: '/posters/seafarer.jpg',
+    posterAlt:
+      'Seafarer: a white fishing workboat on rolling blue waves near palm islands, a deckhand on the aft deck, with catch, signal, phone and health readouts on screen.',
+    blurb:
+      "A Unity 6 game about running a 14 m fishing workboat. You walk the deck while it heaves, pitches and rolls on the swell, click the sea to set a course, haul nets, fight off drones, and answer your partner's texts before she starts to worry.",
+    features: [
+      'Gerstner waves: the shader and the CPU buoyancy run the same maths',
+      'Deck movement solved in the boat’s own frame',
+      'Route planner with pure-pursuit steering',
+      'Engine, wind and wash sounds synthesised in code',
+    ],
+    tags: ['Unity 6', 'C#', 'Windows'],
+    links: [
+      {
+        label: 'Download for Windows (28 MB)',
+        href: 'https://github.com/PhilipDodson2017/seafarer-releases/releases/latest/download/Seafarer-Setup-1.0.exe',
+        primary: true,
+      },
+    ],
+  },
 ]

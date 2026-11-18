@@ -102,7 +102,7 @@ export const films = [
     posterAlt:
       'Seafarer: a white fishing workboat on rolling blue waves near palm islands, a deckhand on the aft deck, with catch, signal, phone and health readouts on screen.',
     blurb:
-      "A Unity 6 game about running a 14 m fishing workboat. You walk the deck while it heaves, pitches and rolls on the swell, click the sea to set a course, haul nets, fight off drones, and answer your partner's texts before she starts to worry.",
+      "A Unity 6 game (early development stage) about running a 14 m fishing workboat. You walk the deck while it heaves, pitches and rolls on the swell, click the sea to set a course, haul nets, fight off drones, and answer your partner's texts before she starts to worry.",
     features: [
       'Gerstner waves: the shader and the CPU buoyancy run the same maths',
       'Deck movement solved in the boat’s own frame',

@@ -23,14 +23,17 @@ npm run build    # production build in dist/
 | `src/index.css` | All styles, including the responsive layouts (monitors → phones) |
 | `public/` | Copied as-is into the site: posters, favicon, share card, `CNAME` |
 | `social-card/card.html` | Template used to render `public/social-card.png` |
-| `worker/` | Cloudflare Worker backend for the chat widget (holds the LLM key) |
+| `chat-api/` | Vercel Function backend for the chat widget (holds the LLM key) |
 
 ## Chatbot
 
 The "Ask about me" widget is a static React component (`ChatWidget`) that posts
-to a serverless backend in `worker/`. The worker keeps the LLM key server-side
-and injects the persona that describes Philip's work. See `worker/README.md` for
-deployment. Set `VITE_CHAT_API_URL` to the deployed worker URL before building.
+to a Vercel Function in `chat-api/`, deployed as its own Vercel project
+(`philip-chat-api`). The function keeps the LLM key server-side, injects the
+persona, and rejects foreign origins and non-JSON requests before calling the
+model; a Vercel Firewall rule rate-limits it per IP. The site build gets the
+URL from `VITE_CHAT_API_URL` in `.github/workflows/deploy.yml`. See
+`chat-api/README.md`.
 
 ## Deploying
 

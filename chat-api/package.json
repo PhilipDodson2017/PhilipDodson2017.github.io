@@ -1,0 +1,12 @@
+{
+  "name": "philip-chat-api",
+  "private": true,
+  "type": "module",
+  "description": "Vercel Function behind the 'Ask about me' widget on philipdodson.dev",
+  "engines": {
+    "node": "24.x"
+  },
+  "scripts": {
+    "test": "node --test"
+  }
+}

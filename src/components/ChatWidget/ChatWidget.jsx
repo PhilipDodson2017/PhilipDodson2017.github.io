@@ -8,9 +8,8 @@ const GREETING = {
     "I'm Philip's warm intro. Ask me anything about his work, projects, or how to get in touch.",
 }
 
-// A small "box office" chat widget. It is intentionally self-contained: the
-// only integration point is <ChatWidget /> in App.jsx. The backend lives in
-// /worker and is called through VITE_CHAT_API_URL (see chat.js).
+// The only integration point is <ChatWidget /> in App.jsx. The backend is the
+// Vercel Function in /chat-api, called through VITE_CHAT_API_URL (see chat.js).
 export default function ChatWidget() {
   const [open, setOpen] = useState(false)
   const [messages, setMessages] = useState([GREETING])

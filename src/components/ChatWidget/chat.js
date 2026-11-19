@@ -1,6 +1,6 @@
-// Talks to the chatbot backend. VITE_CHAT_API_URL is baked in at build time, so
-// set it in .env.production (or the GitHub Actions env) to the deployed worker URL.
-// With no value it defaults to /api/chat, which only works when a proxy is present.
+// Talks to the chat API (chat-api/, a Vercel Function). VITE_CHAT_API_URL is baked
+// in at build time; production sets it in .github/workflows/deploy.yml.
+// With no value it defaults to /api/chat, which GitHub Pages does not serve.
 const API_URL = import.meta.env.VITE_CHAT_API_URL || '/api/chat'
 
 export async function sendChat(messages) {

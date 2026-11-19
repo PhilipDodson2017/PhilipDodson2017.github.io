@@ -40,8 +40,14 @@ jobs:
       - name: Lint
         run: npm run lint
 
+      - name: Test chat API
+        run: npm --prefix chat-api test
+
       - name: Build
         run: npm run build
+        env:
+          # Public URL of the chat API (Vercel project philip-chat-api). Not a secret.
+          VITE_CHAT_API_URL: https://philip-chat-api.vercel.app/api/chat
 
       - name: Upload the built site
         if: github.event_name != 'pull_request'
